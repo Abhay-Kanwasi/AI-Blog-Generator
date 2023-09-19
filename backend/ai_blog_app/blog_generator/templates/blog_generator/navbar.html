@@ -1,0 +1,25 @@
+{% block navbar %}
+<nav class="bg-blue-600 p-7 text-white flex justify-between" style="background: #1f2836;">
+    <div>
+        <a href="{% url 'index' %}">
+            <h1 class="text-3xl font-bold">AI Blog Generator</h1>
+        </a>
+    </div>
+    <div>
+        {% if request.user.is_authenticated %}
+        <div class="authorize">
+            <a class="text-white text-1xl font-bold mx-4">Welcome <strong>{{ user.username }}</strong></a>
+            <a href="/blog_list" class="text-white text-1xl font-bold hover:underline mx-4">Saved Blog Posts</a>
+            <a href="{% url 'user_logout' %}" class="text-white text-1xl font-bold hover:underline">Logout</a>
+        </div>
+            
+        {% else %}
+        <div class="unauthorize">
+            <a href="{% url 'user_login' %}" class="text-white text-1xl font-bold hover:underline">Login</a>
+            <a href="{% url 'user_signup' %}" class="text-white text-1xl font-bold hover:underline" style="margin: 30px;">Register</a>
+        </div>
+            
+        {% endif %}
+    </div>
+</nav>
+{% endblock navbar %}
