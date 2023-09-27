@@ -9,6 +9,8 @@ psycopg2 = "*"
 pytube = "*"
 assemblyai = "*"
 openai = "*"
+dj-database-url = "*"
+psycopg2-binary = "*"
 mysqlclient = "*"
 
 [dev-packages]
